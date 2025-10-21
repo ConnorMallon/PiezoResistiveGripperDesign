@@ -1,0 +1,65 @@
+module RunExample
+
+using PiezoresistiveDesign	
+
+sweep_params = 	Dict()
+fixed_params = Dict(
+	"model_name" => "Test85",
+	"α1" => 1e11,
+	"α2" => 5000,
+	"α3" => 0,
+	"maxiter_TO" => 0,
+	"maxiter_IP" => 0,
+	"f_in" => 01e8, #[8e5],
+	"k∞" => 1e11, 
+	"reg_coeff_IP" => 1,
+	"max_steps_factor" => 0.01,
+	"η_coeff_IP" => 10,
+	"αr" => 0, 
+	"α_Gd" => 1e-3,
+	"hsnf" => 6,
+	"σ_n" => 0,
+	"obj" => "e3",
+	"δ_square" => 0.008, 
+	"δ_circle" => 0.0019, 
+	"Π_TO" => 0.15,
+	"Π_IP" => 5e-7, 
+	"shape" => "square",
+	"initial_shape" => "circle",
+	"δ_star8" => 0.004, 
+	"δ_triangle" => 0.016,
+	"δ_circle_act" => 0.028,
+	"Sϕ"=>[1,2,3,4,5,6],
+	"η_coeff_ϕ" => 0.5,
+	"η_coeff_TO" => 2,
+	"j3val" => 0,
+	"α4" => 0,
+	"k_af" => 1e10,
+	"n" => 30, 
+	"ν_reinit" => 1, 
+	"αfd" => 1,
+	"reg_coeff" => 10, 
+	"k_df" => 1e10,
+	"k_ad" => 5e7,
+	"k_aad" => 100,
+	"σ_lim" => 1000,
+	"r_f_coeff" => 0,
+	"r_σ" => 0,
+	"ϵ_ϕ" => 1e-10,#1e-20,
+	"ϵ_ψ" => 1e-5,
+	"α_ψ" => 1,
+	"γ" => 0.1,
+	"γ_reinit" => 0.5,
+	"iter_mod" => 10,
+	"a_ls" =>  0.2,
+	"b_ls" => 0.01,
+	"ξ_ls" => 60, 
+	"order" => 1,
+	"E" => 11.8e6, 
+	"ν" => 0.45,
+	"vf" => 0.25)
+job_id = 0
+job_array_id = 1 
+save_job_dicts(sweep_params,fixed_params,job_id)
+run_case_function(job_id, job_array_id)
+end
