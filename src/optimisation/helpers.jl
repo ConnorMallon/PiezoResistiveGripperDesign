@@ -264,7 +264,7 @@ function get_initial_os0h_bg(θ, measures, spaces, ls_evo)
   #   reinit!(ls_evo,interpolate(x->x[1]-0.0001,V_φ))#,γ_reinit)
   #   println("reinitied2")
 
-  writevtk(measures["dΩ"].quad.trian,"tmpe",cellfields=["os0h_bg"=>os0h_bg])
+  #writevtk(measures["dΩ"].quad.trian,"tmpe",cellfields=["os0h_bg"=>os0h_bg])
 
   #  # dada
 

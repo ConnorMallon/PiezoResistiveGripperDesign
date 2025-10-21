@@ -117,7 +117,7 @@ function electrode_locations(hsnf)
          
     # # turn it into a DataFrame
     df = DataFrame(x = first.(points), y = last.(points))
-    CSV.write("points.csv", df)
+    #CSV.write("points.csv", df)
     
     obs_points = [Point(x, y) for (x,y) in points]
 end

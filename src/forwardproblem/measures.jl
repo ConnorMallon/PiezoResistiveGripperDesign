@@ -106,17 +106,6 @@ f_all_pts(x) = any( x[1]≈x0 && x[2]≈y0
 update_labels!(500, model, f_all_pts, "AllMyPoints")
 
 
-#f_Γ_D1_extra(x) = (0.0 <= x[1] <= 0.085 + eps()) && (-eps() < x[2] < 0.007)
-
-#update_labels!(600, model, f_Γ_D1_extra, "Gamma_D1_extra")
-
-
-
-
-writevtk(model, "1model")
-
-
-println("model written")
 
 ## Triangulations and measures
 Ω = Triangulation(model)
